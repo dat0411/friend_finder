@@ -56,7 +56,7 @@ class GroupAdminsController < ApplicationController
   def update_row
     @group_admin = GroupAdmin.find(params.fetch("id_to_modify"))
 
-    @group_admin.user_id = params.fetch("user_id")
+    
     @group_admin.group_id = params.fetch("group_id")
 
     if @group_admin.valid?
