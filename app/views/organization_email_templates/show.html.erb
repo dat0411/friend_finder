@@ -13,17 +13,21 @@
 
       <!-- Edit link organization_email start -->
       <div class="col">
-        <a href="/organization_emails/<%= @organization_email.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit organization email
-        </a>
+        <% if current_user == @organization_email.user %>
+          <a href="/organization_emails/<%= @organization_email.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit organization_email
+          </a>
+        <% end %>
       </div>
       <!-- Edit link organization_email end -->
 
       <!-- Delete link organization_email start -->
       <div class="col">
-        <a href="/delete_organization_email/<%= @organization_email.id %>" class="btn btn-block btn-outline-secondary">
-          Delete organization email
-        </a>
+        <% if current_user == @organization_email.user %>
+          <a href="/delete_organization_email/<%= @organization_email.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete organization_email
+          </a>
+        <% end %>
       </div>
       <!-- Delete link organization_email end -->
     </div>
