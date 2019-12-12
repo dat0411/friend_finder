@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Friendship #<%= @friendship.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/friendships" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link friendship start -->
+      <div class="col">
+        <a href="/friendships/<%= @friendship.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit friendship
+        </a>
+      </div>
+      <!-- Edit link friendship end -->
+
+      <!-- Delete link friendship start -->
+      <div class="col">
+        <a href="/delete_friendship/<%= @friendship.id %>" class="btn btn-block btn-outline-secondary">
+          Delete friendship
+        </a>
+      </div>
+      <!-- Delete link friendship end -->
+    </div>
+
+    <dl>
+      <dt>
+        Sender
+      </dt>
+      <!-- Display sender_id start -->
+      <dd>
+        <%= @friendship.sender_id %>
+      </dd>
+      <!-- Display sender_id end -->
+
+      <dt>
+        Receiver
+      </dt>
+      <!-- Display receiver_id start -->
+      <dd>
+        <%= @friendship.receiver_id %>
+      </dd>
+      <!-- Display receiver_id end -->
+
+      <dt>
+        Status
+      </dt>
+      <!-- Display status start -->
+      <dd>
+        <%= @friendship.status %>
+      </dd>
+      <!-- Display status end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@friendship.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@friendship.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

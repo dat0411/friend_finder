@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Friendship resource:
+
+  # CREATE
+  get("/friendships/new", { :controller => "friendships", :action => "new_form" })
+  post("/create_friendship", { :controller => "friendships", :action => "create_row" })
+
+  # READ
+  get("/friendships", { :controller => "friendships", :action => "index" })
+  get("/friendships/:id_to_display", { :controller => "friendships", :action => "show" })
+
+  # UPDATE
+  get("/friendships/:prefill_with_id/edit", { :controller => "friendships", :action => "edit_form" })
+  post("/update_friendship/:id_to_modify", { :controller => "friendships", :action => "update_row" })
+
+  # DELETE
+  get("/delete_friendship/:id_to_remove", { :controller => "friendships", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Travel plan resource:
 
   # CREATE
