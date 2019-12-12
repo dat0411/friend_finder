@@ -4,6 +4,8 @@ RSpec.describe Location, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:users) }
+
     end
 
     describe "InDirect Associations" do

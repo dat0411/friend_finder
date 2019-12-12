@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Direct associations
 
+  belongs_to :location
+
   has_many   :organization_emails,
              :dependent => :destroy
 
