@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Group admin resource:
+
+  # CREATE
+  get("/group_admins/new", { :controller => "group_admins", :action => "new_form" })
+  post("/create_group_admin", { :controller => "group_admins", :action => "create_row" })
+
+  # READ
+  get("/group_admins", { :controller => "group_admins", :action => "index" })
+  get("/group_admins/:id_to_display", { :controller => "group_admins", :action => "show" })
+
+  # UPDATE
+  get("/group_admins/:prefill_with_id/edit", { :controller => "group_admins", :action => "edit_form" })
+  post("/update_group_admin/:id_to_modify", { :controller => "group_admins", :action => "update_row" })
+
+  # DELETE
+  get("/delete_group_admin/:id_to_remove", { :controller => "group_admins", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Group resource:
 
   # CREATE
