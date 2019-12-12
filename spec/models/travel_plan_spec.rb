@@ -12,6 +12,8 @@ RSpec.describe TravelPlan, type: :model do
 
     describe "Validations" do
 
+    it { should validate_presence_of(:end) }
+
     it { should validate_presence_of(:start) }
 
     it { should validate_presence_of(:status) }

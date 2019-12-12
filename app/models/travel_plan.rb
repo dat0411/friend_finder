@@ -5,6 +5,8 @@ class TravelPlan < ApplicationRecord
 
   # Validations
 
+  validates :end, :presence => true
+
   validates :start, :presence => true
 
   validates :status, :presence => true
