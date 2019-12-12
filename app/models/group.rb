@@ -5,6 +5,8 @@ class Group < ApplicationRecord
 
   # Validations
 
+  validates :group_description, :presence => true
+
   validates :group_name, :presence => true
 
 end
