@@ -42,7 +42,7 @@ class OrganizationEmailsController < ApplicationController
   def update_row
     @organization_email = OrganizationEmail.find(params.fetch("id_to_modify"))
 
-    @organization_email.user_id = params.fetch("user_id")
+    
     @organization_email.status = params.fetch("status")
     @organization_email.organization_email = params.fetch("organization_email")
 
