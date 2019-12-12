@@ -42,7 +42,7 @@ class FriendshipsController < ApplicationController
   def update_row
     @friendship = Friendship.find(params.fetch("id_to_modify"))
 
-    @friendship.sender_id = params.fetch("sender_id")
+    
     @friendship.receiver_id = params.fetch("receiver_id")
     @friendship.status = params.fetch("status")
 
