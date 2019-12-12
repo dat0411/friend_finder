@@ -20,7 +20,8 @@ class FriendshipsController < ApplicationController
   end
 
   def index
-    @friendships = current_user.friendships.page(params[:page]).per(10)
+    @q = current_user.friends.ransack(params[:q])
+    @friendships = @q.result(:distinct => true).includes(:sender, :receiver).page(params[:page]).per(10)
 
     render("friendship_templates/index.html.erb")
   end

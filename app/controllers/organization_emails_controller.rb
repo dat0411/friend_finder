@@ -10,7 +10,8 @@ class OrganizationEmailsController < ApplicationController
   end
 
   def index
-    @organization_emails = current_user.organization_emails.page(params[:page]).per(10)
+    @q = current_user.organization_emails.ransack(params[:q])
+    @organization_emails = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("organization_email_templates/index.html.erb")
   end

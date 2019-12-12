@@ -10,7 +10,8 @@ class TravelPlansController < ApplicationController
   end
 
   def index
-    @travel_plans = current_user.travel_plans.page(params[:page]).per(10)
+    @q = current_user.travel_plans.ransack(params[:q])
+    @travel_plans = @q.result(:distinct => true).includes(:owner, :location).page(params[:page]).per(10)
 
     render("travel_plan_templates/index.html.erb")
   end
