@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :group_memberships,
+             :dependent => :destroy
+
   has_many   :travel_plans,
              :foreign_key => "owner_id",
              :dependent => :destroy
