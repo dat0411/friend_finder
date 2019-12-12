@@ -67,7 +67,7 @@ class TravelPlansController < ApplicationController
     @travel_plan.plan_description = params.fetch("plan_description")
     @travel_plan.start = params.fetch("start")
     @travel_plan.end = params.fetch("end")
-    @travel_plan.owner_id = params.fetch("owner_id")
+    
     @travel_plan.status = params.fetch("status")
     @travel_plan.location_id = params.fetch("location_id")
 
