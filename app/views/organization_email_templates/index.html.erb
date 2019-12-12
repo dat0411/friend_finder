@@ -62,7 +62,11 @@
 
         <!-- Display organization_email.user_id start -->
         <td>
-          <%= organization_email.user.email %>
+          <% if organization_email.user.present? %>
+            <a href="/users/<%= organization_email.user.id %>">
+              <%= organization_email.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display organization_email.user_id end -->
 

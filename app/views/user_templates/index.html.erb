@@ -104,7 +104,11 @@
 
         <!-- Display user.location_id start -->
         <td>
-          <%= user.location.user_id %>
+          <% if user.location.present? %>
+            <a href="/locations/<%= user.location.id %>">
+              <%= user.location.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user.location_id end -->
 

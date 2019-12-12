@@ -92,7 +92,11 @@
 
         <!-- Display travel_plan.owner_id start -->
         <td>
-          <%= travel_plan.owner.email %>
+          <% if travel_plan.owner.present? %>
+            <a href="/users/<%= travel_plan.owner.id %>">
+              <%= travel_plan.owner.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display travel_plan.owner_id end -->
 
@@ -104,7 +108,11 @@
 
         <!-- Display travel_plan.location_id start -->
         <td>
-          <%= travel_plan.location.user_id %>
+          <% if travel_plan.location.present? %>
+            <a href="/locations/<%= travel_plan.location.id %>">
+              <%= travel_plan.location.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display travel_plan.location_id end -->
 

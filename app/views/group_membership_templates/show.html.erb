@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @group_membership.user_id %>
+        <% if @group_membership.user.present? %>
+          <a href="/users/<%= @group_membership.user_id %>">
+            <%= @group_membership.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display group_id start -->
       <dd>
-        <%= @group_membership.group_id %>
+        <% if @group_membership.group.present? %>
+          <a href="/groups/<%= @group_membership.group_id %>">
+            <%= @group_membership.group.group_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display group_id end -->
 

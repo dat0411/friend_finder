@@ -66,13 +66,21 @@
 
         <!-- Display group_membership.user_id start -->
         <td>
-          <%= group_membership.user.email %>
+          <% if group_membership.user.present? %>
+            <a href="/users/<%= group_membership.user.id %>">
+              <%= group_membership.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display group_membership.user_id end -->
 
         <!-- Display group_membership.group_id start -->
         <td>
-          <%= group_membership.group.group_name %>
+          <% if group_membership.group.present? %>
+            <a href="/groups/<%= group_membership.group.id %>">
+              <%= group_membership.group.group_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display group_membership.group_id end -->
 

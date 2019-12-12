@@ -62,13 +62,21 @@
 
         <!-- Display friendship.sender_id start -->
         <td>
-          <%= friendship.sender.email %>
+          <% if friendship.sender.present? %>
+            <a href="/users/<%= friendship.sender.id %>">
+              <%= friendship.sender.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display friendship.sender_id end -->
 
         <!-- Display friendship.receiver_id start -->
         <td>
-          <%= friendship.receiver.email %>
+          <% if friendship.receiver.present? %>
+            <a href="/users/<%= friendship.receiver.id %>">
+              <%= friendship.receiver.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display friendship.receiver_id end -->
 

@@ -65,7 +65,11 @@
       </dt>
       <!-- Display owner_id start -->
       <dd>
-        <%= @travel_plan.owner_id %>
+        <% if @travel_plan.owner.present? %>
+          <a href="/users/<%= @travel_plan.owner_id %>">
+            <%= @travel_plan.owner.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display owner_id end -->
 
@@ -83,7 +87,11 @@
       </dt>
       <!-- Display location_id start -->
       <dd>
-        <%= @travel_plan.location_id %>
+        <% if @travel_plan.location.present? %>
+          <a href="/locations/<%= @travel_plan.location_id %>">
+            <%= @travel_plan.location.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display location_id end -->
 

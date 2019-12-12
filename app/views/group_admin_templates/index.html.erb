@@ -58,13 +58,21 @@
 
         <!-- Display group_admin.user_id start -->
         <td>
-          <%= group_admin.user.email %>
+          <% if group_admin.user.present? %>
+            <a href="/users/<%= group_admin.user.id %>">
+              <%= group_admin.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display group_admin.user_id end -->
 
         <!-- Display group_admin.group_id start -->
         <td>
-          <%= group_admin.group.group_name %>
+          <% if group_admin.group.present? %>
+            <a href="/groups/<%= group_admin.group.id %>">
+              <%= group_admin.group.group_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display group_admin.group_id end -->
 
