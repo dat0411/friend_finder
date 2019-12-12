@@ -27,6 +27,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :groups,
+             :through => :group_memberships,
+             :source => :group
+
   # Validations
 
   validates :first_name, :presence => true

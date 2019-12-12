@@ -11,6 +11,10 @@ class Group < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :members,
+             :source => :user
+
   # Validations
 
   validates :group_description, :presence => true
