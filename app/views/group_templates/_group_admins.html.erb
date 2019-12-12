@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_group_admin_from_group/<%= group_admin.id %>">
-          Delete
-        </a>
+        <%if current_user == group_admin.user %>
+          <a href="/delete_group_admin_from_group/<%= group_admin.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

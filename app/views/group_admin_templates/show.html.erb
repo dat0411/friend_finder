@@ -13,17 +13,21 @@
 
       <!-- Edit link group_admin start -->
       <div class="col">
-        <a href="/group_admins/<%= @group_admin.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit group admin
-        </a>
+        <% if current_user == @group_admin.user %>
+          <a href="/group_admins/<%= @group_admin.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit group_admin
+          </a>
+        <% end %>
       </div>
       <!-- Edit link group_admin end -->
 
       <!-- Delete link group_admin start -->
       <div class="col">
-        <a href="/delete_group_admin/<%= @group_admin.id %>" class="btn btn-block btn-outline-secondary">
-          Delete group admin
-        </a>
+        <% if current_user == @group_admin.user %>
+          <a href="/delete_group_admin/<%= @group_admin.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete group_admin
+          </a>
+        <% end %>
       </div>
       <!-- Delete link group_admin end -->
     </div>
