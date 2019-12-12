@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_travel_plan_from_location/<%= travel_plan.id %>">
-          Delete
-        </a>
+        <%if current_user == travel_plan.owner %>
+          <a href="/delete_travel_plan_from_location/<%= travel_plan.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
