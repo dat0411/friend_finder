@@ -10,7 +10,7 @@ class OrganizationEmailsController < ApplicationController
   end
 
   def index
-    @organization_emails = OrganizationEmail.all
+    @organization_emails = current_user.organization_emails.page(params[:page]).per(10)
 
     render("organization_email_templates/index.html.erb")
   end
