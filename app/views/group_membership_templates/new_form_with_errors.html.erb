@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @group_membership.present? %>
+  <% if @group_membership.errors.any? %>
+    <% @group_membership.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new group membership
+</h1>
+
+
+<hr>
+
+<!-- Form group_membership start -->
+<form action="/create_group_membership" method="post">
+<!-- Form group_membership end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @group_membership.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for group_id start -->
+  <div class="form-group">
+    <label for="group_id">
+      Group
+    </label>
+
+    <!-- Input for group_id start -->
+    <input type="text" id="group_id" name="group_id" class="form-control" value="<%= @group_membership.group_id %>">
+    <!-- Input for group_id end -->
+  </div>
+  <!-- Label and input for group_id end -->
+
+  <!-- Label and input for admin_approval start -->
+  <div class="form-group">
+    <label for="admin_approval">
+      Admin approval
+    </label>
+
+    <!-- Input for admin_approval start -->
+    <input type="text" id="admin_approval" name="admin_approval" class="form-control" value="<%= @group_membership.admin_approval %>">
+    <!-- Input for admin_approval end -->
+  </div>
+  <!-- Label and input for admin_approval end -->
+
+  <!-- Label and input for user_accept start -->
+  <div class="form-group">
+    <label for="user_accept">
+      User accept
+    </label>
+
+    <!-- Input for user_accept start -->
+    <input type="text" id="user_accept" name="user_accept" class="form-control" value="<%= @group_membership.user_accept %>">
+    <!-- Input for user_accept end -->
+  </div>
+  <!-- Label and input for user_accept end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create group membership
+  </button>
+</form>
+
+<hr>
+
+<a href="/group_memberships">
+  Go back
+</a>

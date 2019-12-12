@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Group membership resource:
+
+  # CREATE
+  get("/group_memberships/new", { :controller => "group_memberships", :action => "new_form" })
+  post("/create_group_membership", { :controller => "group_memberships", :action => "create_row" })
+
+  # READ
+  get("/group_memberships", { :controller => "group_memberships", :action => "index" })
+  get("/group_memberships/:id_to_display", { :controller => "group_memberships", :action => "show" })
+
+  # UPDATE
+  get("/group_memberships/:prefill_with_id/edit", { :controller => "group_memberships", :action => "edit_form" })
+  post("/update_group_membership/:id_to_modify", { :controller => "group_memberships", :action => "update_row" })
+
+  # DELETE
+  get("/delete_group_membership/:id_to_remove", { :controller => "group_memberships", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Group admin resource:
 
   # CREATE
