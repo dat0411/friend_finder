@@ -60,7 +60,7 @@ class GroupMembershipsController < ApplicationController
   def update_row
     @group_membership = GroupMembership.find(params.fetch("id_to_modify"))
 
-    @group_membership.user_id = params.fetch("user_id")
+    
     @group_membership.group_id = params.fetch("group_id")
     @group_membership.admin_approval = params.fetch("admin_approval")
     @group_membership.user_accept = params.fetch("user_accept")
