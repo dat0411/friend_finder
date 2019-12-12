@@ -1,4 +1,6 @@
 ActiveAdmin.register TravelPlan do
+
+ permit_params :plan_description, :start, :end, :owner_id, :status, :location_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
