@@ -1,4 +1,6 @@
 ActiveAdmin.register GroupMembership do
+
+ permit_params :user_id, :group_id, :admin_approval, :user_accept
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
