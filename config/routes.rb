@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Group resource:
+
+  # CREATE
+  get("/groups/new", { :controller => "groups", :action => "new_form" })
+  post("/create_group", { :controller => "groups", :action => "create_row" })
+
+  # READ
+  get("/groups", { :controller => "groups", :action => "index" })
+  get("/groups/:id_to_display", { :controller => "groups", :action => "show" })
+
+  # UPDATE
+  get("/groups/:prefill_with_id/edit", { :controller => "groups", :action => "edit_form" })
+  post("/update_group/:id_to_modify", { :controller => "groups", :action => "update_row" })
+
+  # DELETE
+  get("/delete_group/:id_to_remove", { :controller => "groups", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Friendship resource:
 
   # CREATE
