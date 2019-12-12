@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :travel_plans,
+             :foreign_key => "owner_id",
+             :dependent => :destroy
+
   has_many   :friends,
              :class_name => "Friendship",
              :foreign_key => "receiver_id",
