@@ -53,7 +53,7 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.find(params.fetch("id_to_modify"))
 
     
-    @friendship.receiver_id = params.fetch("receiver_id")
+    
     @friendship.status = params.fetch("status")
 
     if @friendship.valid?

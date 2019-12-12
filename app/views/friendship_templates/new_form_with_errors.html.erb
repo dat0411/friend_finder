@@ -27,15 +27,9 @@
   <!-- Label and input for sender_id end -->
 
   <!-- Label and input for receiver_id start -->
-  <div class="form-group">
-    <label for="receiver_id">
-      Receiver
-    </label>
-
-    <!-- Input for receiver_id start -->
-    <%= select_tag(:receiver_id, options_from_collection_for_select(User.all, :id, :email, @friendship.receiver_id), :class => "form-control") %>
-    <!-- Input for receiver_id end -->
-  </div>
+  <!-- Input for "receiver_id" start -->
+  <input type="hidden" name="receiver_id" value="<%= current_user.id %>">
+  <!-- Input for "receiver_id" end -->
   <!-- Label and input for receiver_id end -->
 
   <!-- Label and input for status start -->
