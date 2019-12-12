@@ -4,6 +4,8 @@ RSpec.describe GroupMembership, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:group) }
+
     end
 
     describe "InDirect Associations" do
