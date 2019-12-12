@@ -1,0 +1,73 @@
+<!-- Form travel_plan start -->
+<form action="/create_travel_plan_from_location" method="post">
+<!-- Form travel_plan end -->
+
+  <!-- Label and input for plan_description start -->
+  <div class="form-group">
+    <label for="plan_description">
+      Plan description
+    </label>
+
+    <!-- Input for plan_description start -->
+    <input type="text" id="plan_description" name="plan_description" class="form-control" value="<%= @travel_plan.plan_description %>">
+    <!-- Input for plan_description end -->
+  </div>
+  <!-- Label and input for plan_description end -->
+
+  <!-- Label and input for start start -->
+  <div class="form-group">
+    <label for="start">
+      Start
+    </label>
+
+    <!-- Input for start start -->
+    <input type="text" id="start" name="start" class="form-control" value="<%= @travel_plan.start %>">
+    <!-- Input for start end -->
+  </div>
+  <!-- Label and input for start end -->
+
+  <!-- Label and input for end start -->
+  <div class="form-group">
+    <label for="end">
+      End
+    </label>
+
+    <!-- Input for end start -->
+    <input type="text" id="end" name="end" class="form-control" value="<%= @travel_plan.end %>">
+    <!-- Input for end end -->
+  </div>
+  <!-- Label and input for end end -->
+
+  <!-- Label and input for owner_id start -->
+  <div class="form-group">
+    <label for="owner_id">
+      Owner
+    </label>
+
+    <!-- Input for owner_id start -->
+    <input type="text" id="owner_id" name="owner_id" class="form-control" value="<%= @travel_plan.owner_id %>">
+    <!-- Input for owner_id end -->
+  </div>
+  <!-- Label and input for owner_id end -->
+
+  <!-- Label and input for status start -->
+  <div class="form-group">
+    <label for="status">
+      Status
+    </label>
+
+    <!-- Input for status start -->
+    <input type="text" id="status" name="status" class="form-control" value="<%= @travel_plan.status %>">
+    <!-- Input for status end -->
+  </div>
+  <!-- Label and input for status end -->
+
+  <!-- Label and input for location_id start -->
+  <!-- Input for location_id start -->
+  <input type="hidden" name="location_id" value="<%= @location.id %>">
+  <!-- Input for location_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create travel plan
+  </button>
+</form>

@@ -1,0 +1,73 @@
+<!-- Form user start -->
+<form action="/create_user_from_location" method="post">
+<!-- Form user end -->
+
+  <!-- Label and input for email start -->
+  <div class="form-group">
+    <label for="email">
+      Email
+    </label>
+
+    <!-- Input for email start -->
+    <input type="text" id="email" name="email" class="form-control" value="<%= @user.email %>">
+    <!-- Input for email end -->
+  </div>
+  <!-- Label and input for email end -->
+
+  <!-- Label and input for password start -->
+  <div class="form-group">
+    <label for="password">
+      Password
+    </label>
+
+    <!-- Input for password start -->
+    <input type="text" id="password" name="password" class="form-control" value="<%= @user.password %>">
+    <!-- Input for password end -->
+  </div>
+  <!-- Label and input for password end -->
+
+  <!-- Label and input for avatar start -->
+  <div class="form-group">
+    <label for="avatar">
+      Avatar
+    </label>
+
+    <!-- Input for avatar start -->
+    <input type="text" id="avatar" name="avatar" class="form-control" value="<%= @user.avatar %>">
+    <!-- Input for avatar end -->
+  </div>
+  <!-- Label and input for avatar end -->
+
+  <!-- Label and input for first_name start -->
+  <div class="form-group">
+    <label for="first_name">
+      First name
+    </label>
+
+    <!-- Input for first_name start -->
+    <input type="text" id="first_name" name="first_name" class="form-control" value="<%= @user.first_name %>">
+    <!-- Input for first_name end -->
+  </div>
+  <!-- Label and input for first_name end -->
+
+  <!-- Label and input for last_name start -->
+  <div class="form-group">
+    <label for="last_name">
+      Last name
+    </label>
+
+    <!-- Input for last_name start -->
+    <input type="text" id="last_name" name="last_name" class="form-control" value="<%= @user.last_name %>">
+    <!-- Input for last_name end -->
+  </div>
+  <!-- Label and input for last_name end -->
+
+  <!-- Label and input for location_id start -->
+  <!-- Input for location_id start -->
+  <input type="hidden" name="location_id" value="<%= @location.id %>">
+  <!-- Input for location_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create user
+  </button>
+</form>

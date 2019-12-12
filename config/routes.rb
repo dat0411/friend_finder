@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/group_memberships/new", { :controller => "group_memberships", :action => "new_form" })
   post("/create_group_membership", { :controller => "group_memberships", :action => "create_row" })
+  post("/create_group_membership_from_group", { :controller => "group_memberships", :action => "create_row_from_group" })
 
   # READ
   get("/group_memberships", { :controller => "group_memberships", :action => "index" })
@@ -76,6 +77,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/group_admins/new", { :controller => "group_admins", :action => "new_form" })
   post("/create_group_admin", { :controller => "group_admins", :action => "create_row" })
+  post("/create_group_admin_from_group", { :controller => "group_admins", :action => "create_row_from_group" })
 
   # READ
   get("/group_admins", { :controller => "group_admins", :action => "index" })
@@ -137,6 +139,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/travel_plans/new", { :controller => "travel_plans", :action => "new_form" })
   post("/create_travel_plan", { :controller => "travel_plans", :action => "create_row" })
+  post("/create_travel_plan_from_location", { :controller => "travel_plans", :action => "create_row_from_location" })
 
   # READ
   get("/travel_plans", { :controller => "travel_plans", :action => "index" })

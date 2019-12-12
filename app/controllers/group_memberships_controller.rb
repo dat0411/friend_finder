@@ -34,6 +34,23 @@ class GroupMembershipsController < ApplicationController
     end
   end
 
+  def create_row_from_group
+    @group_membership = GroupMembership.new
+
+    @group_membership.user_id = params.fetch("user_id")
+    @group_membership.group_id = params.fetch("group_id")
+    @group_membership.admin_approval = params.fetch("admin_approval")
+    @group_membership.user_accept = params.fetch("user_accept")
+
+    if @group_membership.valid?
+      @group_membership.save
+
+      redirect_to("/groups/#{@group_membership.group_id}", notice: "GroupMembership created successfully.")
+    else
+      render("group_membership_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @group_membership = GroupMembership.find(params.fetch("prefill_with_id"))
 

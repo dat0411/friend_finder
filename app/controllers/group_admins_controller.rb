@@ -32,6 +32,21 @@ class GroupAdminsController < ApplicationController
     end
   end
 
+  def create_row_from_group
+    @group_admin = GroupAdmin.new
+
+    @group_admin.user_id = params.fetch("user_id")
+    @group_admin.group_id = params.fetch("group_id")
+
+    if @group_admin.valid?
+      @group_admin.save
+
+      redirect_to("/groups/#{@group_admin.group_id}", notice: "GroupAdmin created successfully.")
+    else
+      render("group_admin_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @group_admin = GroupAdmin.find(params.fetch("prefill_with_id"))
 

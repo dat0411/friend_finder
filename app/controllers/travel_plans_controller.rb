@@ -36,6 +36,25 @@ class TravelPlansController < ApplicationController
     end
   end
 
+  def create_row_from_location
+    @travel_plan = TravelPlan.new
+
+    @travel_plan.plan_description = params.fetch("plan_description")
+    @travel_plan.start = params.fetch("start")
+    @travel_plan.end = params.fetch("end")
+    @travel_plan.owner_id = params.fetch("owner_id")
+    @travel_plan.status = params.fetch("status")
+    @travel_plan.location_id = params.fetch("location_id")
+
+    if @travel_plan.valid?
+      @travel_plan.save
+
+      redirect_to("/locations/#{@travel_plan.location_id}", notice: "TravelPlan created successfully.")
+    else
+      render("travel_plan_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @travel_plan = TravelPlan.find(params.fetch("prefill_with_id"))
 

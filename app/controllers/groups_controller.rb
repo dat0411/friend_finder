@@ -6,6 +6,8 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @group_admin = GroupAdmin.new
+    @group_membership = GroupMembership.new
     @group = Group.find(params.fetch("id_to_display"))
 
     render("group_templates/show.html.erb")
