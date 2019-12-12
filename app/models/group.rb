@@ -1,4 +1,6 @@
 class Group < ApplicationRecord
+  mount_uploader :group_photo, GroupPhotoUploader
+
   # Direct associations
 
   has_many   :admins,

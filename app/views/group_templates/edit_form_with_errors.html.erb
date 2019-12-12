@@ -14,7 +14,7 @@
 <hr>
 
 <!-- Form group start -->
-<form action="/update_group/<%= @group.id %>" method="post">
+<form action="/update_group/<%= @group.id %>" method="post" enctype="multipart/form-data">
 <!-- Form group end -->
 
   <!-- Label and input for group_name start -->
@@ -48,7 +48,8 @@
     </label>
 
     <!-- Input for group_photo start -->
-    <input type="text" id="group_photo" name="group_photo" class="form-control" value="<%= @group.group_photo %>">
+    <%= cl_image_tag(@group.group_photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="group_photo" name="group_photo" class="form-control">
     <!-- Input for group_photo end -->
   </div>
   <!-- Label and input for group_photo end -->

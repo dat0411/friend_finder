@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
 
     @group.group_name = params.fetch("group_name")
     @group.group_description = params.fetch("group_description")
-    @group.group_photo = params.fetch("group_photo")
+    @group.group_photo = params.fetch("group_photo") if params.key?("group_photo")
 
     if @group.valid?
       @group.save
@@ -46,7 +46,7 @@ class GroupsController < ApplicationController
 
     @group.group_name = params.fetch("group_name")
     @group.group_description = params.fetch("group_description")
-    @group.group_photo = params.fetch("group_photo")
+    @group.group_photo = params.fetch("group_photo") if params.key?("group_photo")
 
     if @group.valid?
       @group.save

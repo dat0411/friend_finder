@@ -17,7 +17,7 @@
 <hr>
 
 <!-- Form group start -->
-<form action="/create_group" method="post">
+<form action="/create_group" method="post" enctype="multipart/form-data">
 <!-- Form group end -->
 
   <!-- Label and input for group_name start -->
@@ -51,7 +51,7 @@
     </label>
 
     <!-- Input for group_photo start -->
-    <input type="text" id="group_photo" name="group_photo" class="form-control" value="<%= @group.group_photo %>">
+    <input type="file" id="group_photo" name="group_photo" class="form-control">
     <!-- Input for group_photo end -->
   </div>
   <!-- Label and input for group_photo end -->
