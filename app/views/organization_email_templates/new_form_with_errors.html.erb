@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @organization_email.present? %>
+  <% if @organization_email.errors.any? %>
+    <% @organization_email.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new organization email
+</h1>
+
+
+<hr>
+
+<!-- Form organization_email start -->
+<form action="/create_organization_email" method="post">
+<!-- Form organization_email end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @organization_email.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for status start -->
+  <div class="form-group">
+    <label for="status">
+      Status
+    </label>
+
+    <!-- Input for status start -->
+    <input type="text" id="status" name="status" class="form-control" value="<%= @organization_email.status %>">
+    <!-- Input for status end -->
+  </div>
+  <!-- Label and input for status end -->
+
+  <!-- Label and input for organization_email start -->
+  <div class="form-group">
+    <label for="organization_email">
+      Organization email
+    </label>
+
+    <!-- Input for organization_email start -->
+    <input type="text" id="organization_email" name="organization_email" class="form-control" value="<%= @organization_email.organization_email %>">
+    <!-- Input for organization_email end -->
+  </div>
+  <!-- Label and input for organization_email end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create organization email
+  </button>
+</form>
+
+<hr>
+
+<a href="/organization_emails">
+  Go back
+</a>

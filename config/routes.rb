@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Organization email resource:
+
+  # CREATE
+  get("/organization_emails/new", { :controller => "organization_emails", :action => "new_form" })
+  post("/create_organization_email", { :controller => "organization_emails", :action => "create_row" })
+
+  # READ
+  get("/organization_emails", { :controller => "organization_emails", :action => "index" })
+  get("/organization_emails/:id_to_display", { :controller => "organization_emails", :action => "show" })
+
+  # UPDATE
+  get("/organization_emails/:prefill_with_id/edit", { :controller => "organization_emails", :action => "edit_form" })
+  post("/update_organization_email/:id_to_modify", { :controller => "organization_emails", :action => "update_row" })
+
+  # DELETE
+  get("/delete_organization_email/:id_to_remove", { :controller => "organization_emails", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Group membership resource:
 
   # CREATE
