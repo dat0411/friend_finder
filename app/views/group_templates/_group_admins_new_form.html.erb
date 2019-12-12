@@ -1,17 +1,8 @@
-<!-- Form group_admin start -->
 <form action="/create_group_admin_from_group" method="post">
-<!-- Form group_admin end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for group_id start -->
-  <!-- Input for group_id start -->
   <input type="hidden" name="group_id" value="<%= @group.id %>">
-  <!-- Input for group_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create group admin

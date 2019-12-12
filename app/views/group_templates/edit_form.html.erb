@@ -4,46 +4,32 @@
 
 <hr>
 
-<!-- Form group start -->
 <form action="/update_group/<%= @group.id %>" method="post" enctype="multipart/form-data">
-<!-- Form group end -->
 
-  <!-- Label and input for group_name start -->
   <div class="form-group">
     <label for="group_name">
       Group name
     </label>
 
-    <!-- Input for group_name start -->
     <input type="text" id="group_name" name="group_name" class="form-control" value="<%= @group.group_name %>">
-    <!-- Input for group_name end -->
   </div>
-  <!-- Label and input for group_name end -->
 
-  <!-- Label and input for group_description start -->
   <div class="form-group">
     <label for="group_description">
       Group description
     </label>
 
-    <!-- Input for group_description start -->
     <textarea id="group_description" name="group_description" class="form-control" rows="3"><%= @group.group_description %></textarea>
-    <!-- Input for group_description end -->
   </div>
-  <!-- Label and input for group_description end -->
 
-  <!-- Label and input for group_photo start -->
   <div class="form-group">
     <label for="group_photo">
       Group photo
     </label>
 
-    <!-- Input for group_photo start -->
     <%= cl_image_tag(@group.group_photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="group_photo" name="group_photo" class="form-control">
-    <!-- Input for group_photo end -->
   </div>
-  <!-- Label and input for group_photo end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update group

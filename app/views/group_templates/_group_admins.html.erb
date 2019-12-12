@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @group.admins.each do |group_admin| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/group_admins/<%= group_admin.id %>">
           <%= group_admin.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == group_admin.user %>
           <a href="/delete_group_admin_from_group/<%= group_admin.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="group_admins_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "group_templates/group_admins_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @friendship.errors.any? %>
   <% @friendship.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,27 +12,17 @@
 
 <hr>
 
-<!-- Form friendship start -->
 <form action="/update_friendship/<%= @friendship.id %>" method="post">
-<!-- Form friendship end -->
 
-  <!-- Label and input for sender_id start -->
-  <!-- Label and input for sender_id end -->
 
-  <!-- Label and input for receiver_id start -->
-  <!-- Label and input for receiver_id end -->
 
-  <!-- Label and input for status start -->
   <div class="form-group">
     <label for="status">
       Status
     </label>
 
-    <!-- Input for status start -->
     <input type="text" id="status" name="status" class="form-control" value="<%= @friendship.status %>">
-    <!-- Input for status end -->
   </div>
-  <!-- Label and input for status end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update friendship

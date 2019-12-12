@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @group_admin.errors.any? %>
   <% @group_admin.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,24 +12,16 @@
 
 <hr>
 
-<!-- Form group_admin start -->
 <form action="/update_group_admin/<%= @group_admin.id %>" method="post">
-<!-- Form group_admin end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for group_id start -->
   <div class="form-group">
     <label for="group_id">
       Group
     </label>
 
-    <!-- Input for group_id start -->
     <%= select_tag(:group_id, options_from_collection_for_select(Group.all, :id, :group_name, @group_admin.group_id), :class => "form-control") %>
-    <!-- Input for group_id end -->
   </div>
-  <!-- Label and input for group_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update group admin

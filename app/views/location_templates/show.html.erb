@@ -11,64 +11,51 @@
         </a>
       </div>
 
-      <!-- Edit link location start -->
       <div class="col">
         <a href="/locations/<%= @location.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit location
         </a>
       </div>
-      <!-- Edit link location end -->
 
-      <!-- Delete link location start -->
       <div class="col">
         <a href="/delete_location/<%= @location.id %>" class="btn btn-block btn-outline-secondary">
           Delete location
         </a>
       </div>
-      <!-- Delete link location end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <%= @location.user_id %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Travel
       </dt>
-      <!-- Display travel_id start -->
       <dd>
         <%= @location.travel_id %>
       </dd>
-      <!-- Display travel_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@location.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@location.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "location_templates/location_users" %>
@@ -80,4 +67,3 @@
     <%= render partial: "location_templates/location_travel_plans" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

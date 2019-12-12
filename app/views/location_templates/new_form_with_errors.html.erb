@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @location.present? %>
   <% if @location.errors.any? %>
     <% @location.errors.full_messages.each do |message| %>
@@ -16,33 +15,23 @@
 
 <hr>
 
-<!-- Form location start -->
 <form action="/create_location" method="post">
-<!-- Form location end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @location.user_id %>">
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for travel_id start -->
   <div class="form-group">
     <label for="travel_id">
       Travel
     </label>
 
-    <!-- Input for travel_id start -->
     <input type="text" id="travel_id" name="travel_id" class="form-control" value="<%= @location.travel_id %>">
-    <!-- Input for travel_id end -->
   </div>
-  <!-- Label and input for travel_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create location

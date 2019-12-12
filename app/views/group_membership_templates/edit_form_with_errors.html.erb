@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @group_membership.errors.any? %>
   <% @group_membership.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,48 +12,32 @@
 
 <hr>
 
-<!-- Form group_membership start -->
 <form action="/update_group_membership/<%= @group_membership.id %>" method="post">
-<!-- Form group_membership end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for group_id start -->
   <div class="form-group">
     <label for="group_id">
       Group
     </label>
 
-    <!-- Input for group_id start -->
     <%= select_tag(:group_id, options_from_collection_for_select(Group.all, :id, :group_name, @group_membership.group_id), :class => "form-control") %>
-    <!-- Input for group_id end -->
   </div>
-  <!-- Label and input for group_id end -->
 
-  <!-- Label and input for admin_approval start -->
   <div class="form-group">
     <label for="admin_approval">
       Admin approval
     </label>
 
-    <!-- Input for admin_approval start -->
     <input type="text" id="admin_approval" name="admin_approval" class="form-control" value="<%= @group_membership.admin_approval %>">
-    <!-- Input for admin_approval end -->
   </div>
-  <!-- Label and input for admin_approval end -->
 
-  <!-- Label and input for user_accept start -->
   <div class="form-group">
     <label for="user_accept">
       User accept
     </label>
 
-    <!-- Input for user_accept start -->
     <input type="text" id="user_accept" name="user_accept" class="form-control" value="<%= @group_membership.user_accept %>">
-    <!-- Input for user_accept end -->
   </div>
-  <!-- Label and input for user_accept end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update group membership

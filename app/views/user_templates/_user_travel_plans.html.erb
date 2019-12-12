@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.travel_plans.each do |travel_plan| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/travel_plans/<%= travel_plan.id %>">
           <%= travel_plan.plan_description %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

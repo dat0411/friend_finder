@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "group_templates/groups_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,41 +54,29 @@
 
       <% @groups.each do |group| %>
       <tr>
-        <!-- Display group.id start -->
         <td>
           <%= group.id %>
         </td>
-        <!-- Display group.id end -->
 
-        <!-- Display group.group_name start -->
         <td>
           <%= group.group_name %>
         </td>
-        <!-- Display group.group_name end -->
 
-        <!-- Display group.group_description start -->
         <td>
           <%= group.group_description %>
         </td>
-        <!-- Display group.group_description end -->
 
-        <!-- Display group.group_photo start -->
         <td>
           <img src='<%= group.group_photo %>' class='img-fluid'>
         </td>
-        <!-- Display group.group_photo end -->
 
-        <!-- Display group.created_at start -->
         <td>
           <%= time_ago_in_words(group.created_at) %> ago
         </td>
-        <!-- Display group.created_at end -->
 
-        <!-- Display group.updated_at start -->
         <td>
           <%= time_ago_in_words(group.updated_at) %> ago
         </td>
-        <!-- Display group.updated_at end -->
 
         <td>
           <a href="/groups/<%= group.id %>">

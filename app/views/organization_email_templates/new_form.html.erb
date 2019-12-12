@@ -5,39 +5,25 @@
 
 <hr>
 
-<!-- Form organization_email start -->
 <form action="/create_organization_email" method="post">
-<!-- Form organization_email end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for status start -->
   <div class="form-group">
     <label for="status">
       Status
     </label>
 
-    <!-- Input for status start -->
     <input type="text" id="status" name="status" class="form-control">
-    <!-- Input for status end -->
   </div>
-  <!-- Label and input for status end -->
 
-  <!-- Label and input for organization_email start -->
   <div class="form-group">
     <label for="organization_email">
       Organization email
     </label>
 
-    <!-- Input for organization_email start -->
     <input type="text" id="organization_email" name="organization_email" class="form-control">
-    <!-- Input for organization_email end -->
   </div>
-  <!-- Label and input for organization_email end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create organization email

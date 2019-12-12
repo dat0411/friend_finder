@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @group_admin.present? %>
   <% if @group_admin.errors.any? %>
     <% @group_admin.errors.full_messages.each do |message| %>
@@ -16,27 +15,17 @@
 
 <hr>
 
-<!-- Form group_admin start -->
 <form action="/create_group_admin" method="post">
-<!-- Form group_admin end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for group_id start -->
   <div class="form-group">
     <label for="group_id">
       Group
     </label>
 
-    <!-- Input for group_id start -->
     <%= select_tag(:group_id, options_from_collection_for_select(Group.all, :id, :group_name, @group_admin.group_id), :class => "form-control") %>
-    <!-- Input for group_id end -->
   </div>
-  <!-- Label and input for group_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create group admin

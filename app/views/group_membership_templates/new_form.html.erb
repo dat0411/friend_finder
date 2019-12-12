@@ -5,51 +5,33 @@
 
 <hr>
 
-<!-- Form group_membership start -->
 <form action="/create_group_membership" method="post">
-<!-- Form group_membership end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for group_id start -->
   <div class="form-group">
     <label for="group_id">
       Group
     </label>
 
-    <!-- Input for group_id start -->
     <%= select_tag(:group_id, options_from_collection_for_select(Group.all, :id, :group_name, @group_membership.group_id), :class => "form-control") %>
-    <!-- Input for group_id end -->
   </div>
-  <!-- Label and input for group_id end -->
 
-  <!-- Label and input for admin_approval start -->
   <div class="form-group">
     <label for="admin_approval">
       Admin approval
     </label>
 
-    <!-- Input for admin_approval start -->
     <input type="text" id="admin_approval" name="admin_approval" class="form-control">
-    <!-- Input for admin_approval end -->
   </div>
-  <!-- Label and input for admin_approval end -->
 
-  <!-- Label and input for user_accept start -->
   <div class="form-group">
     <label for="user_accept">
       User accept
     </label>
 
-    <!-- Input for user_accept start -->
     <input type="text" id="user_accept" name="user_accept" class="form-control">
-    <!-- Input for user_accept end -->
   </div>
-  <!-- Label and input for user_accept end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create group membership
