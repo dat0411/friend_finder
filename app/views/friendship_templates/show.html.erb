@@ -13,17 +13,21 @@
 
       <!-- Edit link friendship start -->
       <div class="col">
-        <a href="/friendships/<%= @friendship.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit friendship
-        </a>
+        <% if current_user == @friendship.sender %>
+          <a href="/friendships/<%= @friendship.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit friendship
+          </a>
+        <% end %>
       </div>
       <!-- Edit link friendship end -->
 
       <!-- Delete link friendship start -->
       <div class="col">
-        <a href="/delete_friendship/<%= @friendship.id %>" class="btn btn-block btn-outline-secondary">
-          Delete friendship
-        </a>
+        <% if current_user == @friendship.sender %>
+          <a href="/delete_friendship/<%= @friendship.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete friendship
+          </a>
+        <% end %>
       </div>
       <!-- Delete link friendship end -->
     </div>
