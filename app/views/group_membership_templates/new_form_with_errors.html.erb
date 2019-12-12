@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for group_id start -->
-    <input type="text" id="group_id" name="group_id" class="form-control" value="<%= @group_membership.group_id %>">
+    <%= select_tag(:group_id, options_from_collection_for_select(Group.all, :id, :group_name, @group_membership.group_id), :class => "form-control") %>
     <!-- Input for group_id end -->
   </div>
   <!-- Label and input for group_id end -->
