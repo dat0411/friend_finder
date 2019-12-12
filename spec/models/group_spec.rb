@@ -4,6 +4,8 @@ RSpec.describe Group, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:admins) }
+
     it { should have_many(:members) }
 
     end
