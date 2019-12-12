@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :group_admins,
+             :dependent => :destroy
+
   has_many   :group_memberships,
              :dependent => :destroy
 
