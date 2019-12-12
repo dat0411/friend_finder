@@ -1,0 +1,101 @@
+<!-- Validation failure messages -->
+<% if @travel_plan.errors.any? %>
+  <% @travel_plan.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit travel plan #<%= @travel_plan.id %>
+</h1>
+
+<hr>
+
+<!-- Form travel_plan start -->
+<form action="/update_travel_plan/<%= @travel_plan.id %>" method="post">
+<!-- Form travel_plan end -->
+
+  <!-- Label and input for plan_description start -->
+  <div class="form-group">
+    <label for="plan_description">
+      Plan description
+    </label>
+
+    <!-- Input for plan_description start -->
+    <input type="text" id="plan_description" name="plan_description" class="form-control" value="<%= @travel_plan.plan_description %>">
+    <!-- Input for plan_description end -->
+  </div>
+  <!-- Label and input for plan_description end -->
+
+  <!-- Label and input for start start -->
+  <div class="form-group">
+    <label for="start">
+      Start
+    </label>
+
+    <!-- Input for start start -->
+    <input type="text" id="start" name="start" class="form-control" value="<%= @travel_plan.start %>">
+    <!-- Input for start end -->
+  </div>
+  <!-- Label and input for start end -->
+
+  <!-- Label and input for end start -->
+  <div class="form-group">
+    <label for="end">
+      End
+    </label>
+
+    <!-- Input for end start -->
+    <input type="text" id="end" name="end" class="form-control" value="<%= @travel_plan.end %>">
+    <!-- Input for end end -->
+  </div>
+  <!-- Label and input for end end -->
+
+  <!-- Label and input for owner_id start -->
+  <div class="form-group">
+    <label for="owner_id">
+      Owner
+    </label>
+
+    <!-- Input for owner_id start -->
+    <input type="text" id="owner_id" name="owner_id" class="form-control" value="<%= @travel_plan.owner_id %>">
+    <!-- Input for owner_id end -->
+  </div>
+  <!-- Label and input for owner_id end -->
+
+  <!-- Label and input for status start -->
+  <div class="form-group">
+    <label for="status">
+      Status
+    </label>
+
+    <!-- Input for status start -->
+    <input type="text" id="status" name="status" class="form-control" value="<%= @travel_plan.status %>">
+    <!-- Input for status end -->
+  </div>
+  <!-- Label and input for status end -->
+
+  <!-- Label and input for location_id start -->
+  <div class="form-group">
+    <label for="location_id">
+      Location
+    </label>
+
+    <!-- Input for location_id start -->
+    <input type="text" id="location_id" name="location_id" class="form-control" value="<%= @travel_plan.location_id %>">
+    <!-- Input for location_id end -->
+  </div>
+  <!-- Label and input for location_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update travel plan
+  </button>
+</form>
+
+<hr>
+
+<a href="/travel_plans">
+  Go back
+</a>
