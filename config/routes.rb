@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "travel_plans#index"
   # Routes for the Location resource:
 
   # CREATE
