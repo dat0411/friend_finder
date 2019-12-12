@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Group Admins
+
+    <a data-toggle="collapse" href="#user_group_admins_new_form">
+      Add group admin
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.group_admins.each do |group_admin| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/group_admins/<%= group_admin.id %>">
+          <%= group_admin.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

@@ -61,6 +61,22 @@ class TravelPlansController < ApplicationController
     end
   end
 
+  def destroy_row_from_owner
+    @travel_plan = TravelPlan.find(params.fetch("id_to_remove"))
+
+    @travel_plan.destroy
+
+    redirect_to("/users/#{@travel_plan.owner_id}", notice: "TravelPlan deleted successfully.")
+  end
+
+  def destroy_row_from_location
+    @travel_plan = TravelPlan.find(params.fetch("id_to_remove"))
+
+    @travel_plan.destroy
+
+    redirect_to("/locations/#{@travel_plan.location_id}", notice: "TravelPlan deleted successfully.")
+  end
+
   def destroy_row
     @travel_plan = TravelPlan.find(params.fetch("id_to_remove"))
 

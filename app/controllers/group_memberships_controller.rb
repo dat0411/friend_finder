@@ -57,6 +57,22 @@ class GroupMembershipsController < ApplicationController
     end
   end
 
+  def destroy_row_from_group
+    @group_membership = GroupMembership.find(params.fetch("id_to_remove"))
+
+    @group_membership.destroy
+
+    redirect_to("/groups/#{@group_membership.group_id}", notice: "GroupMembership deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @group_membership = GroupMembership.find(params.fetch("id_to_remove"))
+
+    @group_membership.destroy
+
+    redirect_to("/users/#{@group_membership.user_id}", notice: "GroupMembership deleted successfully.")
+  end
+
   def destroy_row
     @group_membership = GroupMembership.find(params.fetch("id_to_remove"))
 

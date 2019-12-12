@@ -46,6 +46,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_organization_email/:id_to_remove", { :controller => "organization_emails", :action => "destroy_row" })
+  get("/delete_organization_email_from_user/:id_to_remove", { :controller => "organization_emails", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -65,6 +66,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_group_membership/:id_to_remove", { :controller => "group_memberships", :action => "destroy_row" })
+  get("/delete_group_membership_from_user/:id_to_remove", { :controller => "group_memberships", :action => "destroy_row_from_user" })
+  get("/delete_group_membership_from_group/:id_to_remove", { :controller => "group_memberships", :action => "destroy_row_from_group" })
 
   #------------------------------
 
@@ -84,6 +87,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_group_admin/:id_to_remove", { :controller => "group_admins", :action => "destroy_row" })
+  get("/delete_group_admin_from_user/:id_to_remove", { :controller => "group_admins", :action => "destroy_row_from_user" })
+  get("/delete_group_admin_from_group/:id_to_remove", { :controller => "group_admins", :action => "destroy_row_from_group" })
 
   #------------------------------
 
@@ -122,6 +127,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_friendship/:id_to_remove", { :controller => "friendships", :action => "destroy_row" })
+  get("/delete_friendship_from_receiver/:id_to_remove", { :controller => "friendships", :action => "destroy_row_from_receiver" })
+  get("/delete_friendship_from_sender/:id_to_remove", { :controller => "friendships", :action => "destroy_row_from_sender" })
 
   #------------------------------
 
@@ -141,6 +148,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_travel_plan/:id_to_remove", { :controller => "travel_plans", :action => "destroy_row" })
+  get("/delete_travel_plan_from_location/:id_to_remove", { :controller => "travel_plans", :action => "destroy_row_from_location" })
+  get("/delete_travel_plan_from_owner/:id_to_remove", { :controller => "travel_plans", :action => "destroy_row_from_owner" })
 
   #------------------------------
 

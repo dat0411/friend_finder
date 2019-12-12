@@ -53,6 +53,22 @@ class GroupAdminsController < ApplicationController
     end
   end
 
+  def destroy_row_from_group
+    @group_admin = GroupAdmin.find(params.fetch("id_to_remove"))
+
+    @group_admin.destroy
+
+    redirect_to("/groups/#{@group_admin.group_id}", notice: "GroupAdmin deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @group_admin = GroupAdmin.find(params.fetch("id_to_remove"))
+
+    @group_admin.destroy
+
+    redirect_to("/users/#{@group_admin.user_id}", notice: "GroupAdmin deleted successfully.")
+  end
+
   def destroy_row
     @group_admin = GroupAdmin.find(params.fetch("id_to_remove"))
 

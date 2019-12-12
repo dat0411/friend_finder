@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Friends
+
+    <a data-toggle="collapse" href="#user_friends_new_form">
+      Add friendship
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.friends.each do |friendship| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/friendships/<%= friendship.id %>">
+          <%= friendship.sender_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

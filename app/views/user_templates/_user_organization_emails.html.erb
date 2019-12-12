@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Organization Emails
+
+    <a data-toggle="collapse" href="#user_organization_emails_new_form">
+      Add organization email
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.organization_emails.each do |organization_email| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/organization_emails/<%= organization_email.id %>">
+          <%= organization_email.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

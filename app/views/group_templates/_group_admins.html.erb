@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Admins
+
+    <a data-toggle="collapse" href="#group_admins_new_form">
+      Add group admin
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @group.admins.each do |group_admin| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/group_admins/<%= group_admin.id %>">
+          <%= group_admin.user_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_group_admin_from_group/<%= group_admin.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="group_admins_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

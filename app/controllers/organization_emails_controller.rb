@@ -55,6 +55,14 @@ class OrganizationEmailsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @organization_email = OrganizationEmail.find(params.fetch("id_to_remove"))
+
+    @organization_email.destroy
+
+    redirect_to("/users/#{@organization_email.user_id}", notice: "OrganizationEmail deleted successfully.")
+  end
+
   def destroy_row
     @organization_email = OrganizationEmail.find(params.fetch("id_to_remove"))
 
